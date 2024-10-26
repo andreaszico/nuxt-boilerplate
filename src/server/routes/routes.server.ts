@@ -1,6 +1,6 @@
 export const Routes = {
-  core:{
-    name:'/api',
-    regex:/^\/api\//
-  }
-}
+  core: {
+    name: "/api",
+    regex: /^\/api\//,
+  },
+};
