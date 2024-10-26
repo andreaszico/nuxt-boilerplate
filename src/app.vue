@@ -11,7 +11,6 @@
 <template>
     <div class="app">
         <Html>
-
         <Body>
             <NuxtLayout>
                 <NuxtPage />

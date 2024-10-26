@@ -2,7 +2,9 @@ import type { ResponseApi } from "#build/shared/domain/api/model";
 
 
 export default defineEventHandler(async (event) => {
-  const response = await $fetch("https://jsonplaceholder.typicode.com/photos");
+  const response = await $fetch("https://jsonplaceholder.typicode.com/photos", {
+    method: "GET",
+  });
   
   const app: ResponseApi<any> = {
     data: response,

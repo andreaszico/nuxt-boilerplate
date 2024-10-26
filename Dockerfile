@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 
 ################################################################################
 # Create a stage for installing dependecies
-FROM base as dependencies
+FROM base AS dependencies
 # Copy the package.json and package-lock.json
 COPY package*.json ./
 # Install dependencies
@@ -18,7 +18,7 @@ RUN npm install
 
 ################################################################################
 # Create a stage for running the application in development mode
-FROM dependencies as development
+FROM dependencies AS development
 # Copy the source code
 COPY . .
 # Expose the port
@@ -28,13 +28,11 @@ CMD [ "npm", "run", "dev" ]
 
 ################################################################################
 # Create a stage for building the application
-FROM dependencies as build
+FROM dependencies AS build
 # Copy the source code
 COPY . .
 # Build the application
-RUN npm run build
-# Remove extraneous packages
-RUN npm prune
+RUN npm run build && npm prune
 
 ################################################################################
 # Create a stage for running the application in production mode
