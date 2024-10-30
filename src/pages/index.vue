@@ -1,22 +1,25 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { useAuthStore } from "~/stores/auth.store";
 import { usePostStore } from "~/stores/post.store";
 
-const test = ref<Record<string, any>>({});
 const postStore = usePostStore();
+const authStore = useAuthStore();
 
-const handleClick = async () => {
-  await postStore.fetchPostList(); // Await to ensure postList is updated before logging
+const handleGetPost = async () => {
+  await postStore.fetchPostList();
+};
+
+const handleLogIn = async () => {
+  await authStore.signIn();
 };
 </script>
 
 <template>
   <div>
     <p class="text-4xl">{{ "Hello World" }}</p>
-    <div v-for="(data, index) in postStore.postList">
-      <p class="text-red-400">{{ data.title }}</p>
-      <p class="text-amber-400">{{ data.body }}</p>
+    <div class="flex flex-col items-start">
+      <button type="button" @click="handleGetPost">Get Post</button>
+      <button type="button" @click="handleLogIn">Login</button>
     </div>
-    <button type="button" @click="handleClick">Hello</button>
   </div>
 </template>

@@ -7,6 +7,9 @@ const Routes = {
   Post: {
     FetchAll: () => `${prefix}/posts`,
   },
+  Auth: {
+    SignIn: () => `${prefix}/auth/signin`,
+  },
 };
 
 export default Routes;

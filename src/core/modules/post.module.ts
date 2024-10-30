@@ -1,17 +1,13 @@
 import type { IPost } from "#build/shared/domain/post";
+import type { PostModuleInterface } from "../datasource/post.interface";
 import HttpFactory from "../repository/factory";
 import Routes from "../routes/routes.client";
 
-class PostModule extends HttpFactory {
+class PostModule extends HttpFactory implements PostModuleInterface {
   private readonly RESOURCE = Routes.Post;
-  private accessToken: string = "";
 
-  async fetchAll() {
+  async fetchAll(): Promise<IPost[]> {
     return this.get<IPost[]>(this.RESOURCE.FetchAll());
-  }
-
-  setAccessToken(accessToken: string) {
-    this.accessToken = accessToken;
   }
 }
 

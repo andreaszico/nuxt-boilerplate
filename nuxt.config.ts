@@ -4,8 +4,10 @@ export default defineNuxtConfig({
     public: {
       NUXT_BASE_URL_PROXY_SERVER: process.env.NUXT_BASE_URL_PROXY_SERVER,
     },
-    NUXT_BASE_URL_JSON_PLACEHOLDER_SERVER:
-      process.env.NUXT_BASE_URL_JSON_PLACEHOLDER_SERVER,
+    server: {
+      NUXT_BASE_URL_JSON_PLACEHOLDER_SERVER:
+        process.env.NUXT_BASE_URL_JSON_PLACEHOLDER_SERVER,
+    },
   },
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
