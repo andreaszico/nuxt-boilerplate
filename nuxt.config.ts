@@ -17,7 +17,14 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
   css: ["~/assets/css/main.css"],
-  modules: ["@nuxtjs/i18n", "@pinia/nuxt", "@vueuse/nuxt", "@nuxt/eslint"],
+  modules: [
+    "@nuxtjs/i18n",
+    "@pinia/nuxt",
+    "@vueuse/nuxt",
+    "@nuxt/eslint",
+    "@nuxtjs/tailwindcss",
+    "shadcn-nuxt",
+  ],
   alias: {},
   pinia: {
     autoImports: ["defineStore", "storeToRefs"],
@@ -27,5 +34,22 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  components: [
+    {
+      path: "~/components/ui",
+      prefix: "UI",
+    },
+  ],
+  shadcn: {
+    /**
+     * Prefix for all the imported component
+     */
+    prefix: "",
+    /**
+     * Directory that the component lives in.
+     * @default "./components/ui"
+     */
+    componentDir: "./components/ui",
   },
 });

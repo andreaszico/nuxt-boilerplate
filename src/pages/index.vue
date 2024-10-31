@@ -20,6 +20,7 @@ const handleLogIn = async () => {
     <div class="flex flex-col items-start">
       <button type="button" @click="handleGetPost">Get Post</button>
       <button type="button" @click="handleLogIn">Login</button>
+      <UIButton @click="handleLogIn">Mixing something</UIButton>
     </div>
   </div>
 </template>
