@@ -7,7 +7,22 @@
           <UISidebarMenu>
             <UISidebarMenuItem v-for="item in items" :key="item.title">
               <UISidebarMenuButton asChild>
-                <a :href="item.url" class="flex items-center space-x-2">
+                <a :href="item.url" class="text-xs flex items-center space-x-2">
+                  <component :is="item.icon" />
+                  <span>{{ item.title }}</span>
+                </a>
+              </UISidebarMenuButton>
+            </UISidebarMenuItem>
+          </UISidebarMenu>
+        </UISidebarGroupContent>
+      </UISidebarGroup>
+      <UISidebarGroup>
+        <UISidebarGroupLabel>Application</UISidebarGroupLabel>
+        <UISidebarGroupContent>
+          <UISidebarMenu>
+            <UISidebarMenuItem v-for="item in items" :key="item.title">
+              <UISidebarMenuButton asChild>
+                <a :href="item.url" class="text-xs flex items-center space-x-2">
                   <component :is="item.icon" />
                   <span>{{ item.title }}</span>
                 </a>

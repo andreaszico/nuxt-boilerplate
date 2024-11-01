@@ -1,7 +1,7 @@
 <template>
   <UISidebarProvider>
     <UISidebarAppSidebar />
-    <main>
+    <main class="p-3">
       <UISidebarTrigger />
       <slot />
     </main>

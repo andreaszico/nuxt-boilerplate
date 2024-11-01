@@ -5,7 +5,9 @@ module.exports = {
   darkMode: ["class"],
   safelist: ["dark"],
   prefix: "",
-  
+  fontFamily: {
+    'base': ['"Poppins"', 'sans-serif']
+  },
   theme: {
     container: {
       center: true,
